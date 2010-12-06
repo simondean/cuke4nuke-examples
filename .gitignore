@@ -1,0 +1,9 @@
+
+/build
+/src/_ReSharper.cuke4nuke-examples
+/src/cuke4nuke-examples.5.1.ReSharper.user
+/src/cuke4nuke-examples.suo
+/src/Calculator/bin
+/src/Calculator/obj
+/src/features/step_definitons/bin
+/src/features/step_definitons/obj

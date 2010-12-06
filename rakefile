@@ -1,0 +1,20 @@
+require 'rubygems'
+require 'albacore'
+
+task :default => :features
+
+desc "Build Visual Studio solution"
+msbuild :build do |msb|
+    msb.properties :configuration => :Debug
+    msb.targets :Clean, :Build
+    msb.solution = "src/cuke4nuke-examples.sln"
+end
+
+task :features => :build do
+	tests = "build/step_definitons.dll"
+	sh "cuke4nuke #{tests} src/features"
+	
+	#version = ">= 0"
+	#gem 'cuke4nuke', version
+	#load Gem.bin_path('cuke4nuke', 'cuke4nuke', version)
+end
