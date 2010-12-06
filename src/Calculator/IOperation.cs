@@ -1,7 +1,9 @@
 namespace Calculator
 {
+    using System.Collections.Generic;
+
     public interface IOperation
     {
-        decimal Act(decimal[] values);
+        decimal Act(IList<decimal> values);
     }
 }

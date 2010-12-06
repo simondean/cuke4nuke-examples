@@ -1,12 +1,12 @@
 namespace Calculator
 {
-    using System;
+    using System.Collections.Generic;
 
     public class DivideOperation : IOperation
     {
-        public decimal Act(decimal[] values)
+        public decimal Act(IList<decimal> values)
         {
-            throw new NotImplementedException();
+            return values[0]/values[1];
         }
     }
 }

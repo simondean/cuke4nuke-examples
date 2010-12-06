@@ -21,7 +21,7 @@ namespace Calculator
 
         public decimal Send(string operation)
         {
-            var result = values.Sum();
+            var result = operations[operation].Act(values);
             values.Clear();
             return result;
         }
