@@ -7,7 +7,7 @@
     public class CalculatorSteps
     {
         private Calculator calculator;
-        private string result;
+        private decimal result;
 
         [Before]
         public void Before()
@@ -16,7 +16,7 @@
         }
 
         [Given(@"I have entered (\d+) into the calculator")]
-        public void given_i_have_entered_a_value(int value)
+        public void given_i_have_entered_a_value(decimal value)
         {
             calculator.Push(value);
         }
@@ -28,7 +28,7 @@
         }
 
         [Then(@"the result should be (.*) on the screen")]
-        public void then_the_result_should_be_something_on_the_screen(string result)
+        public void then_the_result_should_be_something_on_the_screen(decimal result)
         {
             Assert.That(this.result, Is.EqualTo(result));
         }

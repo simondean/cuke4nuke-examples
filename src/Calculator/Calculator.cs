@@ -6,18 +6,18 @@ namespace Calculator
 
     public class Calculator
     {
-        private List<int> values = new List<int>();
+        private readonly List<decimal> values = new List<decimal>();
 
-        public void Push(int value)
+        public void Push(decimal value)
         {
             values.Add(value);
         }
 
-        public string Send(string operation)
+        public decimal Send(string operation)
         {
             var result = values.Sum();
             values.Clear();
-            return result.ToString();
+            return result;
         }
     }
 }
