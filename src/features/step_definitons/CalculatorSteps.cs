@@ -12,7 +12,7 @@
         [Before]
         public void Before()
         {
-            calculator = new Calculator();
+            calculator = Calculator.Create();
         }
 
         [Given(@"I have entered (\d+) into the calculator")]

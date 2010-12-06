@@ -6,7 +6,13 @@ namespace Calculator
 
     public class Calculator
     {
+        private readonly Dictionary<string, IOperation> operations;
         private readonly List<decimal> values = new List<decimal>();
+
+        public Calculator(Dictionary<string, IOperation> operations)
+        {
+            this.operations = operations;
+        }
 
         public void Push(decimal value)
         {
@@ -18,6 +24,15 @@ namespace Calculator
             var result = values.Sum();
             values.Clear();
             return result;
+        }
+
+        public static Calculator Create()
+        {
+            return new Calculator(new Dictionary<string, IOperation>
+                                      {
+                                          {"add", new AddOperation()},
+                                          {"divide", new DivideOperation()}
+                                      });
         }
     }
 }
